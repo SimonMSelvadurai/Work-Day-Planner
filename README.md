@@ -15,7 +15,12 @@ Source code can be downloaded from https://github.com/SimonMSelvadurai/Work-Day-
 
 Source code can be cloned : git@github.com:SimonMSelvadurai/Work-Day-Planner.git 
 
+Page can be launched :  https://simonmselvadurai.github.io/Work-Day-Planner/
+
 ### Home Page
+
+https://simonmselvadurai.github.io/Work-Day-Planner/
+
 Once the user clicks the link, Work Day Planner home page will be displayed.
 User may able to see the current time on the top of the planner.
 

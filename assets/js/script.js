@@ -37,7 +37,6 @@ $(".container").on("click", ".saveBtn", function () {
 function checkTimeBlock() {
   var currentTime;
   var currentHour = moment().hour();
-  currentHour = 10;
   var timeBlock = $(".time-block");
   for (var i = 0; i < timeBlock.length; i++) {
     var block = timeBlock[i];
@@ -83,6 +82,7 @@ function clearClick(event) {
 
   if (clear) {
     localStorage.clear();
+    window.alert("All the tasks has been cleared");
     loadStoredAppointments();
   }
 }

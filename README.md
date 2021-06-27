@@ -39,8 +39,9 @@ System gives the response upon saving the tasks.
 This application also helps to clear all the tasks of the day and to re-enter.
 However the application make sure if the user did not clear it by accident.
 
-![Work-Day-Planner-clear-Tasks](assets/images/WorkDayPlanner_ClearTasks_confirm)
+![Work-Day-Planner-clear-Tasks](assets/images/WorkDayPlanner_ClearTasks_confirm.JPG)
 
+![Work-Day-Planner-clear-Tasks](assets/images/WorkDayPlanner_ClearTasks.JPG)
 # Usage
 
 This application helps to understand the moment, jquery and Bootstrap concepts.

@@ -22,13 +22,18 @@ $(".container").on("click", ".saveBtn", function () {
   const element = $(this);
   const appointmentTime = element.parent().attr("id");
   var appointmentDetails = element.siblings(".description").val();
+  var hour = element.parent().children(".hour").text();
 
   // checks if the field is empty
   if (appointmentDetails != null && appointmentDetails.length > 0) {
     localStorage.setItem(appointmentTime, appointmentDetails);
-    window.alert("The entered Task(s) has been saved successfully!!!");
+    window.alert(
+      "The entered Task(s) for " + hour + "  has been saved successfully!!!"
+    );
   } else {
-    window.alert("Please enter a task and press the save button");
+    alert(
+      "Please enter the Task(s) for the  " + hour + " and press the save button"
+    );
   }
 });
 /**
@@ -40,9 +45,10 @@ function checkTimeBlock() {
   var timeBlock = $(".time-block");
   for (var i = 0; i < timeBlock.length; i++) {
     var block = timeBlock[i];
-    if (parseInt(block.id.split("-")[0]) < currentHour) {
+    if (parseInt(block.id) < currentHour) {
       $(block).addClass("past");
-    } else if (parseInt(block.id.split("-")[0]) === currentHour) {
+      // $(block).children(".description").prop("readonly", true);
+    } else if (parseInt(block.id) === currentHour) {
       $(block).removeClass("past");
       $(block).addClass("present");
     } else {
@@ -61,7 +67,6 @@ function clearLocalStorage() {
 //load any saved data from LocalStorage - do this for each hour created. Should follow html 24 hour to 12 hour conversion.
 //Load data from local storage to each time block
 function loadStoredAppointments() {
-  console.log("loadStoredAppointments");
   $("#9AM .description").val(localStorage.getItem("9AM"));
   $("#10AM .description").val(localStorage.getItem("10AM"));
   $("#11AM .description").val(localStorage.getItem("11AM"));
@@ -82,7 +87,7 @@ function clearClick(event) {
 
   if (clear) {
     localStorage.clear();
-    window.alert("All the tasks has been cleared");
     loadStoredAppointments();
+    window.alert("You can enter the tasks for the day !!!");
   }
 }
